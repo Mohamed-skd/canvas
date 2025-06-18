@@ -35,8 +35,13 @@ body > main {
 }
 
 /* CMPS */
+section.grid {
+  @media(width > 60rem){
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 canvas {
-  margin-block: 1rem;
   border: 2px solid;
   background-color: black;
 }
