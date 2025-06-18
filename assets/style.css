@@ -1,0 +1,42 @@
+@import url("./styles/reset.css");
+@import url("./styles/variables.css");
+@import url("./styles/animations.css");
+@import url("./styles/lib.css");
+
+/* BASE */
+:root {
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  position: relative;
+  min-height: 100dvh;
+}
+body > * {
+  display: flow-root;
+}
+body > header {
+  h1 {
+    padding: 1rem;
+    width: fit-content;
+    @media (width > 40rem) {
+      padding: 1rem 4rem;
+    }
+  }
+}
+body > main {
+  margin: 1rem auto;
+  & > section {
+    margin: 1rem auto;
+    width: min(80rem, 100% - 1rem);
+  }
+}
+
+/* CMPS */
+canvas {
+  margin-block: 1rem;
+  border: 2px solid;
+  background-color: black;
+}

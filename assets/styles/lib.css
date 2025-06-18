@@ -1,0 +1,74 @@
+.debug {
+  border: 0.2rem solid red;
+  background: yellow;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+.grid {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.link,
+.bt {
+  margin: 0.2rem;
+  padding: 0.2rem;
+  display: inline-block;
+  font-weight: bold;
+  color: currentColor;
+}
+.link {
+  color: white;
+  background-color: hsl(var(--clr-darker));
+  text-decoration: none;
+  text-shadow: 2px 2px black;
+}
+.bt {
+  cursor: pointer;
+  border: none;
+  color: black;
+  background-color: white;
+  box-shadow: 0.2rem 0.2rem 0.2rem black;
+  &:active {
+    box-shadow: inset 0.2rem 0.2rem 0.2rem black;
+  }
+}
+
+.form {
+  display: grid;
+  margin: 1rem auto;
+  padding: 0.4rem;
+  gap: 0.4rem;
+
+  & > * {
+    padding: 1rem;
+    font-weight: bold;
+  }
+  & input,
+  textarea {
+    box-shadow: -0.2rem -0.2rem 0.2rem black;
+    resize: none;
+  }
+
+  textarea {
+    min-height: 10rem;
+  }
+}
+
+.loader {
+  margin: auto;
+  width: 4rem;
+  height: auto;
+  aspect-ratio: 1/1;
+
+  &.spin {
+    border-radius: 50%;
+    background-image: conic-gradient(black, white);
+    animation: rotate-full 1s infinite linear;
+  }
+}

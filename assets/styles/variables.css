@@ -1,0 +1,20 @@
+:root {
+  --sz-sm-1: 0.4rem;
+  --sz-sm-2: 0.6rem;
+  --sz-sm-3: 0.8rem;
+
+  --sz-bg-1: 20rem;
+  --sz-bg-2: 40rem;
+  --sz-bg-3: 80rem;
+
+  --clr: 0;
+  --clr-black: var(--clr), 10%, 10%;
+  --clr-grey: var(--clr), 10%, 50%;
+  --clr-white: var(--clr), 10%, 90%;
+  --color: var(--clr), 100%, 50%;
+  --clr-lighter: var(--clr), 90%, 80%;
+  --clr-darker: var(--clr), 90%, 20%;
+  --clr-accent90: calc(var(--clr) + 90), 40%, 50%;
+  --clr-accent180: calc(var(--clr) + 180), 40%, 50%;
+  --clr-accent270: calc(var(--clr) + 270), 40%, 50%;
+}

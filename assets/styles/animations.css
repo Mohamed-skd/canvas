@@ -1,0 +1,52 @@
+@keyframes to-right {
+  100% {
+    translate: 100%;
+  }
+}
+@keyframes to-left {
+  100% {
+    translate: -100%;
+  }
+}
+@keyframes to-up {
+  100% {
+    translate: 0 -100%;
+  }
+}
+@keyframes to-down {
+  100% {
+    translate: 0 100%;
+  }
+}
+
+@keyframes rotate-full {
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes rotate-full-rv {
+  100% {
+    rotate: -360deg;
+  }
+}
+@keyframes rotate-half {
+  100% {
+    rotate: 180deg;
+  }
+}
+@keyframes rotate-half-rv {
+  100% {
+    rotate: -180deg;
+  }
+}
+
+@keyframes double {
+  100% {
+    scale: 2;
+  }
+}
+@keyframes half {
+  100% {
+    scale: 0.5;
+  }
+}
