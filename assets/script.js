@@ -84,3 +84,25 @@ let startTime3
   return requestAnimationFrame(loop3)
 })()
 
+// canvas 4
+const c4= domFn.select("#c4")
+const ctx4= c4.getContext("2d")
+const w4= c4.width
+const h4= c4.height
+const size4= 10
+const col4= w4/size4
+const row4= h4/size4
+const margin4= (col4-row4)/2
+
+for (let j=row4; j<=h4; j+= row4){
+  for (let i= margin4; i<w4; i+= col4){
+    (new Triangle(ctx4, [i, j], row4).draw())  
+  }
+}
+for (let j=0; j<h4; j+= row4){
+  for (let i= -col4/2+margin4; i<w4; i+= col4){
+    const color= i/5;
+    (new Triangle(ctx4, [i, j], row4).draw(true, true, [color, 100, 50]))  
+  }
+}
+

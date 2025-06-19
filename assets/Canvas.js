@@ -83,7 +83,7 @@ export class Triangle {
     this.size= size
   }
 
-  draw(fill= false, color= [100, 100, 100]){
+  draw(fill= false, flip=false, color= [100, 100, 100]){
     const triangle= ()=>{
       let nX= this.start[0]
       let nY= this.start[1]
@@ -97,7 +97,7 @@ export class Triangle {
 
 	nX= x
 	nY= y
-	angle-= 120;
+	angle+= flip ? 120 : -120;
       }
     }
 
