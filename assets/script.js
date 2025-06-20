@@ -9,6 +9,23 @@ const dateFn = new DateFn();
 const fetchFn = new FetchFn();
 const domFn = new DomFn();
 
+function animate(cb, frameDelay= 40){
+  let startTime
+  function loop(time){
+    if (!startTime){
+      startTime= time
+      return requestAnimationFrame(loop)
+    }
+    if (time < startTime + frameDelay){
+      return requestAnimationFrame(loop)
+    }
+    startTime= time
+    cb()
+    return requestAnimationFrame(loop)
+  }
+  return loop()
+}
+
 // APP
 // canvas 1
 const c1= domFn.select("#c1")
@@ -105,4 +122,75 @@ for (let j=0; j<h4; j+= row4){
     (new Triangle(ctx4, [i, j], row4).draw(true, true, [color, 100, 50]))  
   }
 }
+
+// canvas 5
+const c5= domFn.select("#c5")
+const ctx5= c5.getContext("2d")
+const w5= c5.width
+const h5= c5.height
+const size5= 10
+const lineW5= 2
+const col5= w5/size5
+const row5= h5/size5
+
+for (let i=0, j=0; i<w5; i+= col5, j++){
+  const start5_1= [i, 0]
+  const start5_2= [i, h5]
+  const end5_1= [w5, h5-row5*j]
+  const end5_2= [0, h5-row5*j]
+
+  new Line(ctx5, start5_1, end5_1).draw(lineW5)
+  new Line(ctx5, start5_2, end5_2).draw(lineW5)
+}
+for (let i=col5, j=1; i<=w5; i+= col5, j++){
+  const start5_1= [i, 0]
+  const start5_2= [i, h5]
+  const end5_1= [0, row5*j]
+  const end5_2= [w5, row5*j]
+
+  new Line(ctx5, start5_1, end5_1).draw(lineW5)
+  new Line(ctx5, start5_2, end5_2).draw(lineW5)
+}
+
+// canvas 6
+const c6= domFn.select("#c6")
+const ctx6= c6.getContext("2d")
+const w6= c6.width
+const h6= c6.height
+const size6= 10
+const lineW6= 2
+const col6= w6/size6
+const row6= h6/size6
+let var6= w6 * 0.01
+let flip6= false
+
+function gridAnim(){
+  const clearSize= Math.max(w6, h6) + 20
+  ctx6.clearRect(-10, -10, clearSize, clearSize)
+
+  for (let i=0, j=0; i<w6; i+= var6, j++){
+    const start6_1= [i, 0]
+    const start6_2= [i, h6]
+    const end6_1= [w6, h6-row5*j]
+    const end6_2= [0, h6-row6*j]
+
+    new Line(ctx6, start6_1, end6_1).draw(lineW5)
+    new Line(ctx6, start6_2, end6_2).draw(lineW5)
+  }
+  for (let i=var6, j=1; i<=w6; i+= var6, j++){
+    const start6_1= [i, 0]
+    const start6_2= [i, h6]
+    const end6_1= [0, row6*j]
+    const end6_2= [w6, row6*j]
+
+    new Line(ctx6, start6_1, end6_1).draw(lineW5)
+    new Line(ctx6, start6_2, end6_2).draw(lineW5)
+  }
+
+  flip6 = var6 > w6 * 0.2  ? true : flip6
+  flip6 = var6 < w6 * 0.01 ? false : flip6
+  flip6 ? var6-- : var6++
+}
+
+animate(gridAnim, 20)
 
