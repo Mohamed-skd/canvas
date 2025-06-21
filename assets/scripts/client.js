@@ -47,4 +47,21 @@ export class DomFn {
     if (!this.isElem(parent)) throw new Error(`Invalid parent: ${parent}.`);
     parent.insertAdjacentHTML("beforeend", html);
   }
+
+  animate(cb, frameDelay= 40){
+    let startTime
+    function loop(time){
+      if (!startTime){
+	startTime= time
+	return requestAnimationFrame(loop)
+      }
+      if (time < startTime + frameDelay){
+	return requestAnimationFrame(loop)
+      }
+      startTime= time
+      cb()
+      return requestAnimationFrame(loop)
+    }
+    return loop()
+  }
 }

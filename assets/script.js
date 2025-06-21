@@ -1,30 +1,8 @@
-import { NumberFn, StringFn, DateFn, FetchFn } from "./scripts/lib.js";
 import { DomFn } from "./scripts/client.js";
 import { Line, Circle, Square, Triangle, Path } from "./Canvas.js"
 
 // UTILS
-const numFn = new NumberFn();
-const strFn = new StringFn();
-const dateFn = new DateFn();
-const fetchFn = new FetchFn();
 const domFn = new DomFn();
-
-function animate(cb, frameDelay= 40){
-  let startTime
-  function loop(time){
-    if (!startTime){
-      startTime= time
-      return requestAnimationFrame(loop)
-    }
-    if (time < startTime + frameDelay){
-      return requestAnimationFrame(loop)
-    }
-    startTime= time
-    cb()
-    return requestAnimationFrame(loop)
-  }
-  return loop()
-}
 
 // APP
 // canvas 1
@@ -39,7 +17,7 @@ const square= new Square(ctx1, [250, 100], 100)
 square.draw()
 const triangle= new Triangle(ctx1, [400,300], 100)
 triangle.draw(true)
-const path= new Path(ctx1, [
+const path1= new Path(ctx1, [
   [50, 110],
   [180, 150],
   [50, 300],
@@ -49,7 +27,7 @@ const path= new Path(ctx1, [
   [450, 120],
   [580, 350]
 ])
-path.draw(5)
+path1.draw(5)
 
 // canvas 2
 const c2= domFn.select("#c2")
@@ -129,7 +107,7 @@ const ctx5= c5.getContext("2d")
 const w5= c5.width
 const h5= c5.height
 const size5= 10
-const lineW5= 2
+const lineW5= 1
 const col5= w5/size5
 const row5= h5/size5
 
@@ -158,7 +136,7 @@ const ctx6= c6.getContext("2d")
 const w6= c6.width
 const h6= c6.height
 const size6= 10
-const lineW6= 2
+const lineW6= 1
 const col6= w6/size6
 const row6= h6/size6
 let var6= w6 * 0.01
@@ -192,5 +170,44 @@ function gridAnim(){
   flip6 ? var6-- : var6++
 }
 
-animate(gridAnim, 20)
+domFn.animate(gridAnim, 20)
+
+//canvas 7
+const c7= domFn.select("#c7")
+const ctx7= c7.getContext("2d")
+const ctr7= [c7.width/2, c7.height/2]
+const size7= 150
+const circles7= 20
+
+function rosace(ctx, ctr, size, circles, color= [100,100,100]){
+  const angle= 360/circles
+  for (let i=0; i<360; i+=angle){
+    const x= ctr[0] + size * Math.cos(i * Math.PI/180)
+    const y= ctr[1] + size * Math.sin(i * Math.PI/180)
+    new Circle(ctx, [x,y], size*0.8).draw(false, color)
+  }
+}
+rosace(ctx7, ctr7, size7, circles7)
+
+// canvas 8
+const c8= domFn.select("#c8")
+const ctx8= c8.getContext("2d")
+const ctr8= [c8.width/2, c8.height/2]
+const size8= 60
+let circles8= 10
+let flip8= false
+let hue= 0
+
+function rosaceAnim(){
+  const clearSize= Math.max(c8.width, c8.height) +20
+  ctx8.clearRect(-10, -10, clearSize, clearSize)
+  ctx8.lineWidth= 2
+  rosace(ctx8, ctr8, size8 * circles8*0.04, circles8, [hue, 100, 50])
+  flip8 = circles8 > 90  ? true : flip8
+  flip8 = circles8 < 10 ? false : flip8
+  flip8 ? circles8-- : circles8++
+  hue++
+}
+
+domFn.animate(rosaceAnim)
 
