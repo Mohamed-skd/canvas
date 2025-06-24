@@ -1,0 +1,1 @@
+function logInfo(o){console.log(`ℹ️ ${o} ℹ️`)}function logSuccess(o){console.log(`✅ ${o} ✅`)}function logError(o){console.log(`❌ ${o} ❌`)}function errorLog(o){return logError("Oups ! An error occured 😔"),console.error(o),!1}export{logInfo,logSuccess,logError,errorLog};

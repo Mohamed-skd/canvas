@@ -1,0 +1,1 @@
+let canvas=document.querySelector("canvas"),params=new URL(location.href).searchParams,id=params.get("id"),module=(id||location.assign("index.html"),id.match("^n[0-9]+$")||location.assign("index.html"),await import("./Canvas.js"));id in module&&module[id](canvas);
