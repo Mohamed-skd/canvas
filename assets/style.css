@@ -41,7 +41,17 @@ section.grid {
   }
 }
 
+a:has(canvas){
+  all: unset;
+  cursor: pointer;
+}
+
 canvas {
-  border: 2px solid;
+  max-height: calc(100dvh - 4rem);
   background-color: black;
 }
+aside.flex .link {
+  margin: 0;
+  padding: .2rem 1rem;
+}
+
