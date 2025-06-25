@@ -9,3 +9,8 @@ const module= await import("./Canvas.js")
 if (id in module) {
   module[id](canvas)
 }
+
+if ("serviceWorker" in navigator){
+  await navigator.serviceWorker.register("pwa.js")
+}
+

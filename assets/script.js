@@ -32,3 +32,8 @@ n5(c5)
 const c6= document.querySelector("#c6")
 n6(c6)
 
+// pwa
+if ("serviceWorker" in navigator){
+  await navigator.serviceWorker.register("pwa.js")
+}
+
