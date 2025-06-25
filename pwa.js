@@ -1,9 +1,28 @@
-const cacheName= "app-cache-1"
+const cacheName= "app-cache-2"
+const cacheFiles= [
+"",
+"index.html",
+"detail.html",
+"detail.html?id=n1",
+"detail.html?id=n2",
+"detail.html?id=n3",
+"detail.html?id=n4",
+"detail.html?id=n5",
+"detail.html?id=n6",
+"detail.html?id=n7",
+"detail.html?id=n8",
+"detail.html?id=n9",
+"detail.html?id=n10",
+"dist/Canvas.js",
+"dist/script.js",
+"dist/detail.js",
+"dist/style.css",
+]
 
 async function setCache(){
   try {
     const cache= await caches.open(cacheName)
-    return true
+    return cache.addAll(cacheFiles)
   } catch (err) {
     console.log(err)
     return false
