@@ -29,14 +29,14 @@
       "sizes":"300x450",
       "type":"image/png",
       "label":"Home screenshot of the list of canvas",
-      "form-factor": "narrow"
+      "form_factor": "narrow"
     },
     {
       "src":"assets/imgs/pwa-screenshot-wide.png",
       "sizes":"800x600",
       "type":"image/png",
       "label":"Detail screenshot of donut drawing",
-      "form-factor": "wide"
+      "form_factor": "wide"
     }
   ]
 }
