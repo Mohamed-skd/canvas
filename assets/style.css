@@ -17,7 +17,7 @@ body {
   135deg, 
   hsl(var(--clr-lighter), .6),
   hsl(var(--clr-lighter), .2),
-  hsl(var(--clr-lighter), .6),
+  hsl(var(--clr-lighter), .6)
   );
 }
 body > * {

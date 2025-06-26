@@ -15,21 +15,28 @@
     {
       "src":"assets/imgs/pwa-icon-192.png",
       "type": "image/png",
-      "size": "192x192"
+      "sizes": "192x192"
     },
     {
       "src":"assets/imgs/pwa-icon-512.png",
       "type": "image/png",
-      "size": "512x512"
+      "sizes": "512x512"
     }
   ],
-  "shortcuts": [
+  "screenshots": [
     {
-      "name": "",
-      "short_name": "",
-      "description": "",
-      "url": "",
-      "icons": []
+      "src":"assets/imgs/pwa-screenshot-narrow.png",
+      "sizes":"300x450",
+      "type":"image/png",
+      "label":"Home screenshot of the list of canvas",
+      "form-factor": "narrow"
+    },
+    {
+      "src":"assets/imgs/pwa-screenshot-wide.png",
+      "sizes":"800x600",
+      "type":"image/png",
+      "label":"Detail screenshot of donut drawing",
+      "form-factor": "wide"
     }
   ]
 }
