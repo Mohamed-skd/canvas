@@ -26,7 +26,7 @@
   "screenshots": [
     {
       "src":"assets/imgs/pwa-screenshot-narrow.png",
-      "sizes":"300x450",
+      "sizes":"320x480",
       "type":"image/png",
       "label":"Home screenshot of the list of canvas",
       "form_factor": "narrow"
