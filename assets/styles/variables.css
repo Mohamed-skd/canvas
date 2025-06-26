@@ -7,7 +7,7 @@
   --sz-bg-2: 40rem;
   --sz-bg-3: 80rem;
 
-  --clr: 0;
+  --clr: 300;
   --clr-black: var(--clr), 10%, 10%;
   --clr-grey: var(--clr), 10%, 50%;
   --clr-white: var(--clr), 10%, 90%;

@@ -1,0 +1,35 @@
+{
+  "name": "Canvas",
+  "short_name": "Canvas",
+  "id": "/canvas",
+  "start_url": "index.html",
+  "description": "Set of canvas with drawings.",
+  "theme_color": "hsl(300 ,90%, 20%)",
+  "background_color": "hsl(300 ,90%, 80%)",
+  "display_override": [
+    "fullscreen",
+    "standalone"
+  ],
+  "display": "minimal-ui",
+  "icons": [
+    {
+      "src":"assets/imgs/pwa-icon-192.png",
+      "type": "image/png",
+      "size": "192x192"
+    },
+    {
+      "src":"assets/imgs/pwa-icon-512.png",
+      "type": "image/png",
+      "size": "512x512"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "",
+      "short_name": "",
+      "description": "",
+      "url": "",
+      "icons": []
+    }
+  ]
+}

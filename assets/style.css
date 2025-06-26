@@ -13,6 +13,12 @@
 body {
   position: relative;
   min-height: 100dvh;
+  background-color: linear-gradient(
+  135deg, 
+  hsl(var(--clr-lighter), .6),
+  hsl(var(--clr-lighter), .2),
+  hsl(var(--clr-lighter), .6),
+  );
 }
 body > * {
   display: flow-root;
