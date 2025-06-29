@@ -88,7 +88,7 @@ export class Triangle {
     const triangle= ()=>{
       let nX= this.start[0]
       let nY= this.start[1]
-      let angle= 0
+      let angle= 60
       this.ctx.moveTo(...this.start)
 
       for (let i=0; i<3; i++){
@@ -98,7 +98,7 @@ export class Triangle {
 
 	nX= x
 	nY= y
-	angle+= flip ? 120 : -120;
+	angle-= flip ? 120 : -120;
       }
     }
 
@@ -302,5 +302,12 @@ export function n6(canvas){
 
   ctx.lineWidth= 5
   animate(rosaceAnim)
+}
+
+// 7
+export function n7(canvas){
+  const ctx= canvas.getContext("2d")
+  const w= canvas.width
+  const h= canvas.height
 }
 

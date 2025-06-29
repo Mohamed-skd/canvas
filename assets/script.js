@@ -4,8 +4,15 @@ import {
   n3,
   n4,
   n5,
-  n6
+  n6,
+  n7
 } from "./Canvas.js"
+
+// UTILS
+// pwa
+if ("serviceWorker" in navigator){
+  await navigator.serviceWorker.register("pwa.js")
+}
 
 // APP
 // canvas 1
@@ -32,8 +39,7 @@ n5(c5)
 const c6= document.querySelector("#c6")
 n6(c6)
 
-// pwa
-if ("serviceWorker" in navigator){
-  await navigator.serviceWorker.register("pwa.js")
-}
+// canvas 7
+const c7= document.querySelector("#c7")
+n7(c7)
 
